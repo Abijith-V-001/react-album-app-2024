@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import AddImage from './Components/AddImage';
+import SearchImage from './Components/SearchImage';
+import DeleteImage from './Components/DeleteImage';
+import Viewall from './Components/Viewall';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<AddImage/>}/>
+      <Route path='/search' element={<SearchImage/>}/>
+      <Route path='/delete' element={<DeleteImage/>}/>
+      <Route path='/viewall' element={<Viewall/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
